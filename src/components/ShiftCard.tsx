@@ -2,6 +2,7 @@ import { Box, Button, Card, CardActions, CardContent, Chip, LinearProgress, Stac
 import EventRoundedIcon from '@mui/icons-material/EventRounded';
 import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded';
 import type { Shift } from '../data/seed';
+import { formatTimeRange } from '../utils/time';
 import StatusChip from './StatusChip';
 
 type Props = {
@@ -33,7 +34,7 @@ export default function ShiftCard({ shift, signedUp, onSignUp, onCancel }: Props
           <Stack direction="row" spacing={1} alignItems="center" color="text.secondary">
             <EventRoundedIcon fontSize="small" />
             <Typography variant="body2">
-              {formatDate(shift.date)} · {shift.start}–{shift.end}
+              {formatDate(shift.date)} · {formatTimeRange(shift.start, shift.end)}
             </Typography>
           </Stack>
           <Stack direction="row" spacing={1} alignItems="center" color="text.secondary">

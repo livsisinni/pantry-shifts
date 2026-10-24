@@ -1,6 +1,7 @@
 import { Button, Checkbox, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControlLabel, TextField } from '@mui/material';
 import { useState } from 'react';
 import type { Shift } from '../data/seed';
+import { formatTimeRange } from '../utils/time';
 
 type Props = { shift: Shift | null; onClose: () => void; onConfirm: (shift: Shift) => void };
 
@@ -15,7 +16,7 @@ export default function SignUpDialog({ shift, onClose, onConfirm }: Props) {
       <DialogTitle>Sign up for this shift</DialogTitle>
       <DialogContent>
         <DialogContentText sx={{ mb: 2 }}>
-          {shift.title} · {shift.start}–{shift.end} at {shift.location}
+          {shift.title} · {formatTimeRange(shift.start, shift.end)} at {shift.location}
         </DialogContentText>
         <TextField
           label="Note for the coordinator"
