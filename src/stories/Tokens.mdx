@@ -1,0 +1,122 @@
+import { Meta, ColorPalette, ColorItem, Typeset } from '@storybook/addon-docs/blocks';
+import { tokens, theme } from '../theme';
+
+<Meta title="Foundations/Tokens" />
+
+export const Table = ({ head, rows }) => (
+  <table style={{ borderCollapse: 'collapse', width: '100%', margin: '16px 0' }}>
+    <thead>
+      <tr>{head.map((h) => <th key={h} style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid #DCE3DF' }}>{h}</th>)}</tr>
+    </thead>
+    <tbody>
+      {rows.map((r, i) => (
+        <tr key={i}>{r.map((c, j) => <td key={j} style={{ padding: '8px 12px', borderBottom: '1px solid #DCE3DF' }}>{typeof c === 'string' && c.startsWith('`') ? <code>{c.slice(1, -1)}</code> : c}</td>)}</tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+
+# Tokens
+
+The design system is MUI 7 plus the theme in `src/theme.ts`. Every value on this page is read from that file, so it cannot drift from the code. Components read from the theme (palette, spacing, shape, typography) instead of hardcoding values.
+
+The same tokens are Figma variables in the [Pantry Shifts Figma file](https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=0-1): collections `Tokens`, `Palette`, `Spacing`, `Shape` and `Typography`, each with a single `Default` mode because the code has no themes.
+
+## Color tokens
+
+The `tokens` object in `src/theme.ts`. In components use the palette key, not the hex value and not the `tokens` object.
+
+<ColorPalette>
+  <ColorItem
+    title="Green"
+    subtitle="tokens.green, primary.main"
+    colors={{ green: tokens.green, greenDark: tokens.greenDark, greenLight: tokens.greenLight }}
+  />
+  <ColorItem
+    title="Amber"
+    subtitle="tokens.amber, secondary.main"
+    colors={{ amber: tokens.amber, amberLight: tokens.amberLight }}
+  />
+  <ColorItem
+    title="Neutrals"
+    subtitle="ink, muted, line, surface, canvas"
+    colors={{ ink: tokens.ink, muted: tokens.muted, line: tokens.line, surface: tokens.surface, canvas: tokens.canvas }}
+  />
+</ColorPalette>
+
+### Palette mapping
+
+<Table
+  head={['Token', 'Palette key', 'Value']}
+  rows={[
+    ['`green`', '`primary.main`', theme.palette.primary.main],
+    ['`greenDark`', '`primary.dark`', theme.palette.primary.dark],
+    ['`greenLight`', '`primary.light`', theme.palette.primary.light],
+    ['(none)', '`primary.contrastText`', theme.palette.primary.contrastText],
+    ['`amber`', '`secondary.main`', theme.palette.secondary.main],
+    ['`amberLight`', '`secondary.light`', theme.palette.secondary.light],
+    ['`ink`', '`text.primary`', theme.palette.text.primary],
+    ['`muted`', '`text.secondary`', theme.palette.text.secondary],
+    ['`line`', '`divider`', theme.palette.divider],
+    ['`surface`', '`background.paper`', theme.palette.background.paper],
+    ['`canvas`', '`background.default`', theme.palette.background.default],
+  ]}
+/>
+
+## Typography
+
+Font family: <code>{theme.typography.fontFamily}</code>. Inter 400, 500, 600 and 700 are loaded from Google Fonts.
+
+The theme sets `h1`, `h2`, `h3` and `button`. The other variants used in the code (`body1`, `body2`, `caption`) are MUI defaults.
+
+<Typeset
+  fontFamily={theme.typography.fontFamily}
+  fontSizes={[theme.typography.h1.fontSize, theme.typography.h2.fontSize, theme.typography.h3.fontSize]}
+  fontWeight={700}
+  sampleText="Upcoming shifts"
+/>
+
+<Table
+  head={['Variant', 'Size', 'Weight', 'Other']}
+  rows={[
+    ['`h1`', theme.typography.h1.fontSize, String(theme.typography.h1.fontWeight), `letter spacing ${theme.typography.h1.letterSpacing}`],
+    ['`h2`', theme.typography.h2.fontSize, String(theme.typography.h2.fontWeight), ''],
+    ['`h3`', theme.typography.h3.fontSize, String(theme.typography.h3.fontWeight), ''],
+    ['`button`', 'MUI default', String(theme.typography.button.fontWeight), `text transform ${theme.typography.button.textTransform}`],
+  ]}
+/>
+
+## Spacing
+
+The spacing unit is {theme.spacing(1)}. Use `sx` spacing units, not px strings.
+
+<Table
+  head={['Multiplier', 'Pixels', 'Where']}
+  rows={[
+    ['0.5', theme.spacing(0.5), 'small gaps, text margins'],
+    ['0.75', theme.spacing(0.75), 'meta rows in ShiftCard'],
+    ['1', theme.spacing(1), 'icon and text gaps'],
+    ['1.5', theme.spacing(1.5), 'chip row margin, avatar gap'],
+    ['2', theme.spacing(2), 'stacks, card actions'],
+    ['2.5', theme.spacing(2.5), 'SummaryTile padding, form stack'],
+    ['3', theme.spacing(3), 'grids, page header margin, card padding'],
+    ['5', theme.spacing(5), 'page container vertical padding'],
+  ]}
+/>
+
+## Shape and component defaults
+
+<Table
+  head={['Token', 'Value']}
+  rows={[
+    ['`shape.borderRadius`', `${theme.shape.borderRadius}px`],
+    ['`MuiButton` border radius', `${theme.components.MuiButton.styleOverrides.root.borderRadius}px`],
+    ['`MuiButton` horizontal padding', `${theme.components.MuiButton.styleOverrides.root.paddingInline}px`],
+    ['`MuiButton`', 'no elevation'],
+    ['`MuiCard`', 'variant="outlined", border color is the line token'],
+    ['`MuiChip`', 'label weight 600'],
+    ['`MuiAppBar`', 'no elevation, color="inherit"'],
+  ]}
+/>
+

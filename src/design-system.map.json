@@ -1,0 +1,1526 @@
+{
+  "readme": [
+    "Maps each component in the Figma file to its code component, Storybook stories, variants, props and tokens. Read it together with src/design-system.md (the rules) before any design system work.",
+    "Use figma.id and figma.url to open a component in Figma, code.file and code.export to find it in code, and story.ids to preview it in Storybook (http://localhost:6006/?path=/story/<id>).",
+    "status: mapped = a code component (custom, or an MUI component used as is). unmapped = Figma only, no standalone code component.",
+    "tokens.direct are variables bound on the component itself, tokens.inherits are components nested inside it, tokens.literal are values that are not tokens. Look up every token name in tokenIndex.",
+    "figmaOnly props exist only in Figma. codeOnly props exist only in code. mismatches lists known differences between Figma and code.",
+    "When you change a component's props, variants or tokens, update its entry here and its Figma component and Storybook story. Do not guess a mapping that is not in this file."
+  ],
+  "version": 1,
+  "updated": "2026-10-26",
+  "figma": {
+    "fileKey": "IPcWrmWuclsYviyq4sJ5NS",
+    "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled",
+    "nodeUrlPattern": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=<id with ':' replaced by '-'>",
+    "pages": {
+      "Tokens": "0:1",
+      "Atoms": "3:30",
+      "Molecules": "3:31",
+      "Organisms": "3:32",
+      "Screens": "3:33"
+    },
+    "note": "The file is still named Untitled. Links use the file key, so they keep working after a rename."
+  },
+  "storybook": {
+    "command": "npm run storybook",
+    "url": "http://localhost:6006",
+    "mcp": "http://localhost:6006/mcp",
+    "mcpServerName": "pantry-shifts-storybook",
+    "idPattern": "<title lowercased, / and spaces to ->--<export name kebab-case>",
+    "tokensDocsId": "foundations-tokens--docs",
+    "tokensDocsFile": "src/stories/Tokens.mdx"
+  },
+  "tokenIndex": {
+    "green": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.green",
+      "value": "#2F6B4F",
+      "note": "Use the palette key primary.main in components, not this token."
+    },
+    "greenDark": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.greenDark",
+      "value": "#1F4A36",
+      "note": "Use the palette key primary.dark in components, not this token."
+    },
+    "greenLight": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.greenLight",
+      "value": "#E4F0E9",
+      "note": "Use the palette key primary.light in components, not this token."
+    },
+    "amber": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.amber",
+      "value": "#C9791B",
+      "note": "Use the palette key secondary.main in components, not this token."
+    },
+    "amberLight": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.amberLight",
+      "value": "#FCEFD9",
+      "note": "Use the palette key secondary.light in components, not this token."
+    },
+    "ink": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.ink",
+      "value": "#1D2521",
+      "note": "Use the palette key text.primary in components, not this token."
+    },
+    "muted": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.muted",
+      "value": "#5B6761",
+      "note": "Use the palette key text.secondary in components, not this token."
+    },
+    "line": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.line",
+      "value": "#DCE3DF",
+      "note": "Use the palette key divider in components, not this token."
+    },
+    "surface": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.surface",
+      "value": "#FFFFFF",
+      "note": "Use the palette key background.paper in components, not this token."
+    },
+    "canvas": {
+      "figmaCollection": "Tokens",
+      "code": "tokens.canvas",
+      "value": "#F5F7F5",
+      "note": "Use the palette key background.default in components, not this token."
+    },
+    "primary/main": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.primary.main",
+      "sx": "primary.main",
+      "value": "#2F6B4F"
+    },
+    "primary/dark": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.primary.dark",
+      "sx": "primary.dark",
+      "value": "#1F4A36"
+    },
+    "primary/light": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.primary.light",
+      "sx": "primary.light",
+      "value": "#E4F0E9"
+    },
+    "primary/contrastText": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.primary.contrastText",
+      "sx": "primary.contrastText",
+      "value": "#FFFFFF",
+      "note": "A raw #FFFFFF in the code, not an alias of a tokens entry."
+    },
+    "secondary/main": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.secondary.main",
+      "sx": "secondary.main",
+      "value": "#C9791B"
+    },
+    "secondary/light": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.secondary.light",
+      "sx": "secondary.light",
+      "value": "#FCEFD9"
+    },
+    "text/primary": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.text.primary",
+      "sx": "text.primary",
+      "value": "#1D2521"
+    },
+    "text/secondary": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.text.secondary",
+      "sx": "text.secondary",
+      "value": "#5B6761"
+    },
+    "divider": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.divider",
+      "sx": "divider",
+      "value": "#DCE3DF"
+    },
+    "background/paper": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.background.paper",
+      "sx": "background.paper",
+      "value": "#FFFFFF"
+    },
+    "background/default": {
+      "figmaCollection": "Palette",
+      "code": "theme.palette.background.default",
+      "sx": "background.default",
+      "value": "#F5F7F5"
+    },
+    "spacing/0_5": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(0.5)",
+      "sx": 0.5,
+      "value": "4px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/0_75": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(0.75)",
+      "sx": 0.75,
+      "value": "6px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/1": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(1)",
+      "sx": 1,
+      "value": "8px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/1_5": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(1.5)",
+      "sx": 1.5,
+      "value": "12px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/2": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(2)",
+      "sx": 2,
+      "value": "16px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/2_5": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(2.5)",
+      "sx": 2.5,
+      "value": "20px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/3": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(3)",
+      "sx": 3,
+      "value": "24px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "spacing/5": {
+      "figmaCollection": "Spacing",
+      "code": "theme.spacing(5)",
+      "sx": 5,
+      "value": "40px",
+      "note": "Figma variable names cannot contain a dot, so 0.5 is written 0_5."
+    },
+    "shape/borderRadius": {
+      "figmaCollection": "Shape",
+      "code": "theme.shape.borderRadius",
+      "value": "12px"
+    },
+    "MuiButton/borderRadius": {
+      "figmaCollection": "Shape",
+      "code": "theme.components.MuiButton.styleOverrides.root.borderRadius",
+      "value": "10px"
+    },
+    "MuiButton/paddingInline": {
+      "figmaCollection": "Shape",
+      "code": "theme.components.MuiButton.styleOverrides.root.paddingInline",
+      "value": "20px"
+    },
+    "typography/fontFamily": {
+      "figmaCollection": "Typography",
+      "code": "theme.typography.fontFamily",
+      "value": "\"Inter\", \"Helvetica Neue\", Arial, sans-serif"
+    }
+  },
+  "textStyleIndex": {
+    "h1": {
+      "code": "Typography variant h1",
+      "defined": "src/theme.ts",
+      "value": "32px, 700, letter spacing -0.02em"
+    },
+    "h2": {
+      "code": "Typography variant h2",
+      "defined": "src/theme.ts",
+      "value": "24px, 700"
+    },
+    "h3": {
+      "code": "Typography variant h3",
+      "defined": "src/theme.ts",
+      "value": "18px, 600"
+    },
+    "button": {
+      "code": "Typography variant button",
+      "defined": "src/theme.ts",
+      "value": "14px (MUI default), 600, no text transform"
+    },
+    "body1": {
+      "code": "Typography variant body1",
+      "defined": "MUI default",
+      "value": "16px, 400"
+    },
+    "body2": {
+      "code": "Typography variant body2",
+      "defined": "MUI default",
+      "value": "14px, 400"
+    },
+    "caption": {
+      "code": "Typography variant caption",
+      "defined": "MUI default",
+      "value": "12px, 400"
+    }
+  },
+  "components": [
+    {
+      "figma": {
+        "name": "Button",
+        "id": "3:119",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-119"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import { Button } from '@mui/material'",
+        "export": "Button",
+        "file": "node_modules/@mui/material/Button",
+        "themeDefaults": "src/theme.ts (components.MuiButton)",
+        "usedIn": [
+          "src/components/ShiftCard.tsx:54",
+          "src/components/ShiftCard.tsx:58",
+          "src/components/SignUpDialog.tsx:37",
+          "src/components/SignUpDialog.tsx:38",
+          "src/pages/SettingsPage.tsx:37"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Button",
+        "file": "src/stories/mui/Button.stories.tsx",
+        "docsId": "atoms-button--docs",
+        "ids": [
+          "atoms-button--contained",
+          "atoms-button--outlined",
+          "atoms-button--text",
+          "atoms-button--contained-disabled",
+          "atoms-button--outlined-disabled",
+          "atoms-button--text-disabled"
+        ]
+      },
+      "props": [
+        {
+          "figma": "children",
+          "figmaType": "TEXT",
+          "code": "children"
+        },
+        {
+          "figma": "variant",
+          "figmaType": "VARIANT",
+          "options": [
+            "contained",
+            "outlined",
+            "text"
+          ],
+          "code": "variant"
+        },
+        {
+          "figma": "disabled",
+          "figmaType": "VARIANT",
+          "options": [
+            "false",
+            "true"
+          ],
+          "code": "disabled"
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [
+        "onClick",
+        "color (only ever the default primary)"
+      ],
+      "variants": [
+        {
+          "figma": "variant=contained, disabled=false",
+          "code": {
+            "variant": "contained"
+          },
+          "story": "atoms-button--contained"
+        },
+        {
+          "figma": "variant=contained, disabled=true",
+          "code": {
+            "variant": "contained",
+            "disabled": true
+          },
+          "story": "atoms-button--contained-disabled"
+        },
+        {
+          "figma": "variant=outlined, disabled=false",
+          "code": {
+            "variant": "outlined"
+          },
+          "story": "atoms-button--outlined"
+        },
+        {
+          "figma": "variant=outlined, disabled=true",
+          "code": {
+            "variant": "outlined",
+            "disabled": true
+          },
+          "story": "atoms-button--outlined-disabled"
+        },
+        {
+          "figma": "variant=text, disabled=false",
+          "code": {
+            "variant": "text"
+          },
+          "story": "atoms-button--text"
+        },
+        {
+          "figma": "variant=text, disabled=true",
+          "code": {
+            "variant": "text",
+            "disabled": true
+          },
+          "story": "atoms-button--text-disabled"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "MuiButton/borderRadius",
+          "MuiButton/paddingInline",
+          "primary/main",
+          "primary/contrastText",
+          "typography/fontFamily"
+        ],
+        "textStyles": [
+          "button"
+        ],
+        "inherits": [],
+        "literal": [
+          "Disabled colors are MUI defaults: black at 12% (fill) and 26% (text). They are not theme tokens."
+        ]
+      },
+      "mismatches": [
+        "disabled is only used on the contained button (src/components/ShiftCard.tsx:58); Figma exposes it on all three variants.",
+        "variant=text is only used in the sign-up dialog (src/components/SignUpDialog.tsx:37).",
+        "src/pages/VolunteersPage.tsx:23 renders a raw <button> for Print roster instead of Button. Figma uses Button there."
+      ]
+    },
+    {
+      "figma": {
+        "name": "Chip",
+        "id": "4:6",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-6"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import { Chip } from '@mui/material'",
+        "export": "Chip",
+        "file": "node_modules/@mui/material/Chip",
+        "themeDefaults": "src/theme.ts (components.MuiChip: label weight 600)",
+        "usedIn": [
+          "src/components/ShiftCard.tsx:27",
+          "src/components/StatusChip.tsx:7",
+          "src/components/StatusChip.tsx:9"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Chip",
+        "file": "src/stories/mui/Chip.stories.tsx",
+        "docsId": "atoms-chip--docs",
+        "ids": [
+          "atoms-chip--filled-default",
+          "atoms-chip--outlined-primary",
+          "atoms-chip--role"
+        ]
+      },
+      "props": [
+        {
+          "figma": "label",
+          "figmaType": "TEXT",
+          "code": "label"
+        },
+        {
+          "figma": "variant",
+          "figmaType": "VARIANT",
+          "options": [
+            "filled",
+            "outlined"
+          ],
+          "code": "variant"
+        },
+        {
+          "figma": "color",
+          "figmaType": "VARIANT",
+          "options": [
+            "default",
+            "primary"
+          ],
+          "code": "color"
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [
+        "size (always \"small\")",
+        "sx"
+      ],
+      "variants": [
+        {
+          "figma": "variant=filled, color=default",
+          "code": {
+            "variant": "filled",
+            "color": "default",
+            "size": "small"
+          },
+          "story": "atoms-chip--filled-default"
+        },
+        {
+          "figma": "variant=outlined, color=primary",
+          "code": {
+            "variant": "outlined",
+            "color": "primary",
+            "size": "small"
+          },
+          "story": "atoms-chip--outlined-primary"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "primary/main",
+          "text/primary"
+        ],
+        "textStyles": [],
+        "inherits": [],
+        "literal": [
+          "Filled default fill is MUI default (black at 8%), radius 16 and height 24 are MUI defaults for size small."
+        ]
+      },
+      "mismatches": [
+        "Figma has the 2 variant combinations used in the code, not all 4.",
+        "The role chip (src/components/ShiftCard.tsx:27) is a filled chip with an sx override (primary.light fill, primary.dark text), not a prop. Story: atoms-chip--role.",
+        "The Full chip (src/components/StatusChip.tsx:7) is a filled chip with sx overrides using raw hex #FCEFD9 and #C9791B, which equal secondary.light and secondary.main.",
+        "size is always small in the code and is not a Figma property."
+      ]
+    },
+    {
+      "figma": {
+        "name": "TextField",
+        "id": "4:34",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-34"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import { TextField } from '@mui/material'",
+        "export": "TextField",
+        "file": "node_modules/@mui/material/TextField",
+        "usedIn": [
+          "src/components/SignUpDialog.tsx:21",
+          "src/pages/VolunteersPage.tsx:43",
+          "src/pages/SettingsPage.tsx:22",
+          "src/pages/SettingsPage.tsx:23"
+        ]
+      },
+      "story": {
+        "title": "Atoms/TextField",
+        "file": "src/stories/mui/TextField.stories.tsx",
+        "docsId": "atoms-textfield--docs",
+        "ids": [
+          "atoms-textfield--small-with-search-adornment",
+          "atoms-textfield--medium",
+          "atoms-textfield--email",
+          "atoms-textfield--multiline"
+        ]
+      },
+      "props": [
+        {
+          "figma": "label",
+          "figmaType": "TEXT",
+          "code": "label"
+        },
+        {
+          "figma": "placeholder",
+          "figmaType": "TEXT",
+          "code": "placeholder"
+        },
+        {
+          "figma": "value",
+          "figmaType": "TEXT",
+          "code": "value"
+        },
+        {
+          "figma": "size",
+          "figmaType": "VARIANT",
+          "options": [
+            "small",
+            "medium"
+          ],
+          "code": "size"
+        },
+        {
+          "figma": "multiline",
+          "figmaType": "VARIANT",
+          "options": [
+            "false",
+            "true"
+          ],
+          "code": "multiline (minRows 3 in the code)"
+        },
+        {
+          "figma": "startAdornment",
+          "figmaType": "BOOLEAN",
+          "code": "slotProps.input.startAdornment"
+        },
+        {
+          "figma": "adornmentIcon",
+          "figmaType": "INSTANCE_SWAP",
+          "code": "the icon inside the InputAdornment",
+          "default": "SearchRounded fontSize=small"
+        }
+      ],
+      "figmaOnly": [
+        "showLabel",
+        "showPlaceholder",
+        "showValue"
+      ],
+      "codeOnly": [
+        "type (email)",
+        "fullWidth",
+        "onChange",
+        "sx maxWidth"
+      ],
+      "variants": [
+        {
+          "figma": "size=small, multiline=false",
+          "code": {
+            "size": "small"
+          },
+          "story": "atoms-textfield--small-with-search-adornment"
+        },
+        {
+          "figma": "size=medium, multiline=false",
+          "code": {},
+          "story": "atoms-textfield--medium"
+        },
+        {
+          "figma": "size=medium, multiline=true",
+          "code": {
+            "multiline": true,
+            "minRows": 3
+          },
+          "story": "atoms-textfield--multiline"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "background/paper",
+          "shape/borderRadius",
+          "text/primary",
+          "text/secondary",
+          "typography/fontFamily"
+        ],
+        "textStyles": [
+          "body1",
+          "caption"
+        ],
+        "inherits": [
+          "SearchRounded"
+        ],
+        "literal": [
+          "Outline is MUI default (black at 23%). Heights 40, 56 and 102 are measured from the running app."
+        ]
+      },
+      "mismatches": [
+        "The Figma default is size=small; the MUI default is medium.",
+        "The Figma label is always the shrunk (floating) label state.",
+        "src/pages/VolunteersPage.tsx:43 has a placeholder but no label or aria-label, so it has no accessible name. Figma shows it without a label.",
+        "Story atoms-textfield--email has no Figma variant (type=email is a code-only prop)."
+      ]
+    },
+    {
+      "figma": {
+        "name": "EventRounded",
+        "id": "3:85",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-85"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import EventRoundedIcon from '@mui/icons-material/EventRounded'",
+        "export": "EventRoundedIcon (default export)",
+        "file": "node_modules/@mui/icons-material/EventRounded.js",
+        "usedIn": [
+          "src/components/ShiftCard.tsx:35 (fontSize small)"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Icons",
+        "file": "src/stories/mui/Icons.stories.tsx",
+        "docsId": "atoms-icons--docs",
+        "ids": [
+          "atoms-icons--event-rounded"
+        ]
+      },
+      "props": [
+        {
+          "figma": "fontSize",
+          "figmaType": "VARIANT",
+          "options": [
+            "small",
+            "medium"
+          ],
+          "code": "fontSize",
+          "note": "Figma default is small; the MUI default is medium."
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [],
+      "variants": [
+        {
+          "figma": "fontSize=small",
+          "code": {
+            "fontSize": "small"
+          },
+          "size": "20px",
+          "story": "atoms-icons--event-rounded"
+        },
+        {
+          "figma": "fontSize=medium",
+          "code": {
+            "fontSize": "medium"
+          },
+          "size": "24px",
+          "story": "atoms-icons--event-rounded"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "text/primary"
+        ],
+        "inherits": [],
+        "literal": []
+      },
+      "mismatches": [
+        "Figma defaults to fontSize=small, the MUI default is medium.",
+        "MUI icons use currentColor; Figma fills default to text/primary and each instance overrides the color.",
+        "Used at fontSize small in ShiftCard."
+      ]
+    },
+    {
+      "figma": {
+        "name": "PlaceRounded",
+        "id": "3:92",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-92"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import PlaceRoundedIcon from '@mui/icons-material/PlaceRounded'",
+        "export": "PlaceRoundedIcon (default export)",
+        "file": "node_modules/@mui/icons-material/PlaceRounded.js",
+        "usedIn": [
+          "src/components/ShiftCard.tsx:41 (fontSize small)"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Icons",
+        "file": "src/stories/mui/Icons.stories.tsx",
+        "docsId": "atoms-icons--docs",
+        "ids": [
+          "atoms-icons--place-rounded"
+        ]
+      },
+      "props": [
+        {
+          "figma": "fontSize",
+          "figmaType": "VARIANT",
+          "options": [
+            "small",
+            "medium"
+          ],
+          "code": "fontSize",
+          "note": "Figma default is small; the MUI default is medium."
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [],
+      "variants": [
+        {
+          "figma": "fontSize=small",
+          "code": {
+            "fontSize": "small"
+          },
+          "size": "20px",
+          "story": "atoms-icons--place-rounded"
+        },
+        {
+          "figma": "fontSize=medium",
+          "code": {
+            "fontSize": "medium"
+          },
+          "size": "24px",
+          "story": "atoms-icons--place-rounded"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "text/primary"
+        ],
+        "inherits": [],
+        "literal": []
+      },
+      "mismatches": [
+        "Figma defaults to fontSize=small, the MUI default is medium.",
+        "MUI icons use currentColor; Figma fills default to text/primary and each instance overrides the color.",
+        "Used at fontSize small in ShiftCard."
+      ]
+    },
+    {
+      "figma": {
+        "name": "SearchRounded",
+        "id": "3:99",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-99"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import SearchRoundedIcon from '@mui/icons-material/SearchRounded'",
+        "export": "SearchRoundedIcon (default export)",
+        "file": "node_modules/@mui/icons-material/SearchRounded.js",
+        "usedIn": [
+          "src/pages/VolunteersPage.tsx:48 (fontSize small, inside TextField)"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Icons",
+        "file": "src/stories/mui/Icons.stories.tsx",
+        "docsId": "atoms-icons--docs",
+        "ids": [
+          "atoms-icons--search-rounded"
+        ]
+      },
+      "props": [
+        {
+          "figma": "fontSize",
+          "figmaType": "VARIANT",
+          "options": [
+            "small",
+            "medium"
+          ],
+          "code": "fontSize",
+          "note": "Figma default is small; the MUI default is medium."
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [],
+      "variants": [
+        {
+          "figma": "fontSize=small",
+          "code": {
+            "fontSize": "small"
+          },
+          "size": "20px",
+          "story": "atoms-icons--search-rounded"
+        },
+        {
+          "figma": "fontSize=medium",
+          "code": {
+            "fontSize": "medium"
+          },
+          "size": "24px",
+          "story": "atoms-icons--search-rounded"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "text/primary"
+        ],
+        "inherits": [],
+        "literal": []
+      },
+      "mismatches": [
+        "Figma defaults to fontSize=small, the MUI default is medium.",
+        "MUI icons use currentColor; Figma fills default to text/primary and each instance overrides the color.",
+        "Used at fontSize small inside the roster search TextField."
+      ]
+    },
+    {
+      "figma": {
+        "name": "VolunteerActivismRounded",
+        "id": "3:106",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-106"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "mui",
+        "import": "import VolunteerActivismRoundedIcon from '@mui/icons-material/VolunteerActivismRounded'",
+        "export": "VolunteerActivismRoundedIcon (default export)",
+        "file": "node_modules/@mui/icons-material/VolunteerActivismRounded.js",
+        "usedIn": [
+          "src/App.tsx:25 (fontSize default medium, colored by the parent: primary.main)"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Icons",
+        "file": "src/stories/mui/Icons.stories.tsx",
+        "docsId": "atoms-icons--docs",
+        "ids": [
+          "atoms-icons--volunteer-activism-rounded"
+        ]
+      },
+      "props": [
+        {
+          "figma": "fontSize",
+          "figmaType": "VARIANT",
+          "options": [
+            "small",
+            "medium"
+          ],
+          "code": "fontSize",
+          "note": "Figma default is small; the MUI default is medium."
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [],
+      "variants": [
+        {
+          "figma": "fontSize=small",
+          "code": {
+            "fontSize": "small"
+          },
+          "size": "20px",
+          "story": "atoms-icons--volunteer-activism-rounded"
+        },
+        {
+          "figma": "fontSize=medium",
+          "code": {
+            "fontSize": "medium"
+          },
+          "size": "24px",
+          "story": "atoms-icons--volunteer-activism-rounded"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "text/primary"
+        ],
+        "inherits": [],
+        "literal": []
+      },
+      "mismatches": [
+        "Figma defaults to fontSize=small, the MUI default is medium.",
+        "MUI icons use currentColor; Figma fills default to text/primary and each instance overrides the color.",
+        "Used at the default (medium) size in the app bar."
+      ]
+    },
+    {
+      "figma": {
+        "name": "StatusChip",
+        "id": "4:45",
+        "type": "COMPONENT_SET",
+        "page": "Molecules",
+        "level": "molecule",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-45"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "custom",
+        "file": "src/components/StatusChip.tsx",
+        "export": "default (StatusChip)",
+        "props": "{ spotsLeft: number }",
+        "usedIn": [
+          "src/components/ShiftCard.tsx:28"
+        ]
+      },
+      "story": {
+        "title": "Molecules/StatusChip",
+        "file": "src/components/StatusChip.stories.tsx",
+        "docsId": "molecules-statuschip--docs",
+        "ids": [
+          "molecules-statuschip--full",
+          "molecules-statuschip--one-spot-left",
+          "molecules-statuschip--spots-left"
+        ]
+      },
+      "props": [
+        {
+          "figma": "spotsLeft",
+          "figmaType": "VARIANT",
+          "options": [
+            "0",
+            "1",
+            "2+"
+          ],
+          "code": "spotsLeft: number"
+        }
+      ],
+      "figmaOnly": [
+        "label (exposed from the nested Chip, so the count can be edited)"
+      ],
+      "codeOnly": [],
+      "variants": [
+        {
+          "figma": "spotsLeft=0",
+          "code": {
+            "spotsLeft": 0
+          },
+          "story": "molecules-statuschip--full"
+        },
+        {
+          "figma": "spotsLeft=1",
+          "code": {
+            "spotsLeft": 1
+          },
+          "story": "molecules-statuschip--one-spot-left"
+        },
+        {
+          "figma": "spotsLeft=2+",
+          "code": {
+            "spotsLeft": "any number >= 2 (story uses 3)"
+          },
+          "story": "molecules-statuschip--spots-left"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "primary/main",
+          "secondary/light",
+          "secondary/main"
+        ],
+        "textStyles": [],
+        "inherits": [
+          "Chip"
+        ],
+        "literal": []
+      },
+      "mismatches": [
+        "spotsLeft is a number in code and a 3-value variant in Figma.",
+        "The label is derived in code (\"Full\", \"1 spot left\", \"N spots left\"); in Figma it is a text override on the nested Chip.",
+        "src/components/StatusChip.tsx:7 uses raw hex values for the Full chip; Figma binds secondary/light and secondary/main."
+      ]
+    },
+    {
+      "figma": {
+        "name": "PageHeader",
+        "id": "4:46",
+        "type": "COMPONENT",
+        "page": "Molecules",
+        "level": "molecule",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-46"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "custom",
+        "file": "src/components/PageHeader.tsx",
+        "export": "default (PageHeader)",
+        "props": "{ title: string; subtitle?: string; action?: ReactNode }",
+        "usedIn": [
+          "src/pages/ShiftsPage.tsx:28",
+          "src/pages/VolunteersPage.tsx:18",
+          "src/pages/SettingsPage.tsx:17"
+        ]
+      },
+      "story": {
+        "title": "Molecules/PageHeader",
+        "file": "src/components/PageHeader.stories.tsx",
+        "docsId": "molecules-pageheader--docs",
+        "ids": [
+          "molecules-pageheader--default",
+          "molecules-pageheader--without-subtitle",
+          "molecules-pageheader--without-action",
+          "molecules-pageheader--with-toggle-button-group"
+        ]
+      },
+      "props": [
+        {
+          "figma": "title",
+          "figmaType": "TEXT",
+          "code": "title"
+        },
+        {
+          "figma": "subtitle",
+          "figmaType": "TEXT",
+          "code": "subtitle"
+        },
+        {
+          "figma": "action",
+          "figmaType": "INSTANCE_SWAP",
+          "code": "action (ReactNode)",
+          "default": "Button variant=contained"
+        }
+      ],
+      "figmaOnly": [
+        "showSubtitle (code: subtitle is optional)",
+        "showAction (code: action is optional)"
+      ],
+      "codeOnly": [],
+      "variants": [],
+      "variantNote": "No variants. Optional parts are booleans in Figma and optional props in code.",
+      "storyByState": {
+        "showSubtitle=false": "molecules-pageheader--without-subtitle",
+        "showAction=false": "molecules-pageheader--without-action",
+        "action=ToggleButtonGroup": "molecules-pageheader--with-toggle-button-group"
+      },
+      "tokens": {
+        "direct": [
+          "spacing/0_5",
+          "text/primary",
+          "text/secondary"
+        ],
+        "textStyles": [
+          "h1",
+          "body1"
+        ],
+        "inherits": [
+          "Button"
+        ],
+        "literal": []
+      },
+      "mismatches": [
+        "showSubtitle and showAction exist only in Figma.",
+        "The Figma component is 1152px wide, the content width of the lg Container (1200 minus 24px padding each side)."
+      ]
+    },
+    {
+      "figma": {
+        "name": "SummaryTile",
+        "id": "4:52",
+        "type": "COMPONENT",
+        "page": "Molecules",
+        "level": "molecule",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-52"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "custom",
+        "file": "src/components/SummaryTile.tsx",
+        "export": "default (SummaryTile)",
+        "props": "{ label: string; value: string | number }",
+        "usedIn": [
+          "src/pages/VolunteersPage.tsx:32",
+          "src/pages/VolunteersPage.tsx:35",
+          "src/pages/VolunteersPage.tsx:38"
+        ]
+      },
+      "story": {
+        "title": "Molecules/SummaryTile",
+        "file": "src/components/SummaryTile.stories.tsx",
+        "docsId": "molecules-summarytile--docs",
+        "ids": [
+          "molecules-summarytile--number-value",
+          "molecules-summarytile--string-value"
+        ]
+      },
+      "props": [
+        {
+          "figma": "label",
+          "figmaType": "TEXT",
+          "code": "label"
+        },
+        {
+          "figma": "value",
+          "figmaType": "TEXT",
+          "code": "value",
+          "note": "string | number in code; text in Figma."
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [],
+      "variants": [],
+      "variantNote": "No variants.",
+      "tokens": {
+        "direct": [
+          "background/paper",
+          "divider",
+          "shape/borderRadius",
+          "spacing/0_5",
+          "spacing/2_5",
+          "text/primary",
+          "text/secondary"
+        ],
+        "textStyles": [
+          "body2",
+          "h2"
+        ],
+        "inherits": [],
+        "literal": []
+      },
+      "mismatches": [
+        "The Figma profile screen uses SummaryTile for \"Hours this season\". The code uses InfoTile there (props title and text), which looks identical.",
+        "The code gets the border and radius from the MuiCard theme default (variant outlined); Figma binds divider and shape/borderRadius directly."
+      ]
+    },
+    {
+      "figma": {
+        "name": "ShiftCard",
+        "id": "5:179",
+        "type": "COMPONENT_SET",
+        "page": "Organisms",
+        "level": "organism",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=5-179"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "custom",
+        "file": "src/components/ShiftCard.tsx",
+        "export": "default (ShiftCard)",
+        "props": "{ shift: Shift; signedUp: boolean; onSignUp: (shift: Shift) => void; onCancel: (shift: Shift) => void }",
+        "usedIn": [
+          "src/pages/ShiftsPage.tsx:48"
+        ]
+      },
+      "story": {
+        "title": "Organisms/ShiftCard",
+        "file": "src/components/ShiftCard.stories.tsx",
+        "docsId": "organisms-shiftcard--docs",
+        "ids": [
+          "organisms-shiftcard--open",
+          "organisms-shiftcard--last-spot",
+          "organisms-shiftcard--full",
+          "organisms-shiftcard--signed-up",
+          "organisms-shiftcard--signed-up-last-spot",
+          "organisms-shiftcard--signed-up-full"
+        ]
+      },
+      "props": [
+        {
+          "figma": "title",
+          "figmaType": "TEXT",
+          "code": "shift.title"
+        },
+        {
+          "figma": "date",
+          "figmaType": "TEXT",
+          "code": "shift.date, formatted by formatDate in ShiftCard.tsx"
+        },
+        {
+          "figma": "timeRange",
+          "figmaType": "TEXT",
+          "code": "formatTimeRange(shift.start, shift.end)"
+        },
+        {
+          "figma": "location",
+          "figmaType": "TEXT",
+          "code": "shift.location"
+        },
+        {
+          "figma": "signedUp",
+          "figmaType": "VARIANT",
+          "options": [
+            "false",
+            "true"
+          ],
+          "code": "signedUp"
+        },
+        {
+          "figma": "spotsLeft",
+          "figmaType": "VARIANT",
+          "options": [
+            "0",
+            "1",
+            "2+"
+          ],
+          "code": "derived: shift.capacity - shift.volunteerIds.length"
+        },
+        {
+          "figma": "role (exposed label of the nested Chip)",
+          "figmaType": "TEXT",
+          "code": "shift.role"
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [
+        "onSignUp",
+        "onCancel"
+      ],
+      "variants": [
+        {
+          "figma": "signedUp=false, spotsLeft=2+",
+          "code": {
+            "signedUp": false,
+            "spotsLeft": ">= 2"
+          },
+          "story": "organisms-shiftcard--open"
+        },
+        {
+          "figma": "signedUp=false, spotsLeft=1",
+          "code": {
+            "signedUp": false,
+            "spotsLeft": 1
+          },
+          "story": "organisms-shiftcard--last-spot"
+        },
+        {
+          "figma": "signedUp=false, spotsLeft=0",
+          "code": {
+            "signedUp": false,
+            "spotsLeft": 0
+          },
+          "story": "organisms-shiftcard--full"
+        },
+        {
+          "figma": "signedUp=true, spotsLeft=2+",
+          "code": {
+            "signedUp": true,
+            "spotsLeft": ">= 2"
+          },
+          "story": "organisms-shiftcard--signed-up"
+        },
+        {
+          "figma": "signedUp=true, spotsLeft=1",
+          "code": {
+            "signedUp": true,
+            "spotsLeft": 1
+          },
+          "story": "organisms-shiftcard--signed-up-last-spot"
+        },
+        {
+          "figma": "signedUp=true, spotsLeft=0",
+          "code": {
+            "signedUp": true,
+            "spotsLeft": 0
+          },
+          "story": "organisms-shiftcard--signed-up-full"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "background/paper",
+          "divider",
+          "shape/borderRadius",
+          "primary/main",
+          "primary/light",
+          "primary/dark",
+          "spacing/0_5",
+          "spacing/0_75",
+          "spacing/1",
+          "spacing/2",
+          "spacing/2_5",
+          "text/primary",
+          "text/secondary"
+        ],
+        "textStyles": [
+          "h3",
+          "body2",
+          "caption"
+        ],
+        "inherits": [
+          "Chip",
+          "StatusChip",
+          "Button",
+          "EventRounded",
+          "PlaceRounded"
+        ],
+        "literal": [
+          "Progress track is primary/main at 38% opacity, height 8."
+        ]
+      },
+      "mismatches": [
+        "The code takes one shift object; Figma splits it into text properties and two variants. spotsLeft is derived, not a prop.",
+        "The progress fill width and the \"N of M volunteers\" text are manual overrides in Figma.",
+        "src/components/ShiftCard.tsx:24 and :25 hardcode borderLeft '4px solid #2F6B4F' and padding '20px'. Figma binds primary/main and spacing/2_5.",
+        "src/components/ShiftCard.tsx:46 sets the progress borderRadius to 4 in sx, which MUI multiplies by shape.borderRadius (12) to render 48px. Figma uses a 4px radius, which looks identical at 8px tall.",
+        "ShiftCard formats the date with the browser locale. Figma shows en-US (\"Mon, Nov 2\")."
+      ]
+    },
+    {
+      "figma": {
+        "name": "ToggleButtonGroup",
+        "id": "6:23",
+        "type": "COMPONENT_SET",
+        "page": "Screens",
+        "level": "screen helper",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=6-23"
+      },
+      "status": "unmapped",
+      "unmappedReason": "No standalone code component. The code uses MUI ToggleButtonGroup inline in ShiftsPage. Figma keeps it on the Screens page as a screen-local helper.",
+      "code": {
+        "kind": "inline",
+        "import": "import { ToggleButton, ToggleButtonGroup } from '@mui/material'",
+        "export": null,
+        "file": null,
+        "usedIn": [
+          "src/pages/ShiftsPage.tsx:32 (exclusive, size small, aria-label \"Filter shifts\")"
+        ]
+      },
+      "story": {
+        "title": "Molecules/ToggleButtonGroup",
+        "file": "src/stories/mui/ToggleButtonGroup.stories.tsx",
+        "docsId": "molecules-togglebuttongroup--docs",
+        "ids": [
+          "molecules-togglebuttongroup--all",
+          "molecules-togglebuttongroup--open-spots",
+          "molecules-togglebuttongroup--my-shifts"
+        ]
+      },
+      "props": [
+        {
+          "figma": "value",
+          "figmaType": "VARIANT",
+          "options": [
+            "all",
+            "open",
+            "mine"
+          ],
+          "code": "ShiftsPage filter state: 'all' | 'open' | 'mine'"
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [
+        "onChange",
+        "exclusive",
+        "size",
+        "aria-label"
+      ],
+      "variants": [
+        {
+          "figma": "value=all",
+          "code": {
+            "value": "all"
+          },
+          "story": "molecules-togglebuttongroup--all"
+        },
+        {
+          "figma": "value=open",
+          "code": {
+            "value": "open"
+          },
+          "story": "molecules-togglebuttongroup--open-spots"
+        },
+        {
+          "figma": "value=mine",
+          "code": {
+            "value": "mine"
+          },
+          "story": "molecules-togglebuttongroup--my-shifts"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "divider",
+          "shape/borderRadius",
+          "text/primary"
+        ],
+        "textStyles": [],
+        "inherits": [],
+        "literal": [
+          "Selected fill is text/primary at 8%; unselected text is MUI default (black at 54%)."
+        ]
+      },
+      "mismatches": [
+        "The story copies the inline markup from ShiftsPage; changing ShiftsPage does not change the story.",
+        "Storybook files it under Molecules; Figma keeps it on the Screens page."
+      ]
+    },
+    {
+      "figma": {
+        "name": "AppBar",
+        "id": "7:41",
+        "type": "COMPONENT_SET",
+        "page": "Screens",
+        "level": "screen helper",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=7-41"
+      },
+      "status": "unmapped",
+      "unmappedReason": "No standalone code component. The app bar, brand and tabs are inline JSX in App.tsx. Figma keeps it on the Screens page as a screen-local helper. No story exists.",
+      "code": {
+        "kind": "inline",
+        "import": "import { AppBar, Tabs, Tab, Toolbar } from '@mui/material'",
+        "export": null,
+        "file": null,
+        "themeDefaults": "src/theme.ts (components.MuiAppBar: no elevation, color inherit)",
+        "usedIn": [
+          "src/App.tsx:22"
+        ]
+      },
+      "story": null,
+      "props": [
+        {
+          "figma": "tab",
+          "figmaType": "VARIANT",
+          "options": [
+            "Shifts",
+            "Volunteers",
+            "My profile"
+          ],
+          "code": "App state `tab` (0, 1, 2; can be preset with ?tab=)"
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [],
+      "variants": [
+        {
+          "figma": "tab=Shifts",
+          "code": {
+            "tab": 0
+          },
+          "story": null
+        },
+        {
+          "figma": "tab=Volunteers",
+          "code": {
+            "tab": 1
+          },
+          "story": null
+        },
+        {
+          "figma": "tab=My profile",
+          "code": {
+            "tab": 2
+          },
+          "story": null
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "background/paper",
+          "divider",
+          "primary/main",
+          "spacing/1",
+          "spacing/3",
+          "text/primary",
+          "text/secondary",
+          "typography/fontFamily"
+        ],
+        "textStyles": [
+          "button",
+          "h3"
+        ],
+        "inherits": [
+          "VolunteerActivismRounded"
+        ],
+        "literal": [
+          "Toolbar height 64 is the MUI default for sm and up."
+        ]
+      },
+      "mismatches": [
+        "No story, because a story would copy App.tsx markup.",
+        "The code sets the AppBar divider border with sx (borderBottom: 1, borderColor: 'divider')."
+      ]
+    }
+  ]
+}
