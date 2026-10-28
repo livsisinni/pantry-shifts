@@ -1,5 +1,6 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import type { Preview } from '@storybook/react-vite';
+import CarrotConfetti from '../src/components/CarrotConfetti';
 import { theme } from '../src/theme';
 
 const preview: Preview = {
@@ -7,6 +8,7 @@ const preview: Preview = {
     (Story) => (
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <CarrotConfetti />
         <Story />
       </ThemeProvider>
     ),

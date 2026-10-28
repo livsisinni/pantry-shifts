@@ -23,7 +23,7 @@ There is no linter. `npm run build` (the type check, which also covers the stori
 - `src/main.tsx`: entry. Wraps `App` in `ThemeProvider` and `CssBaseline`.
 - `src/App.tsx`: sticky app bar with tabs. There is no router. The tab is local state and can be preset with `?tab=<index>`.
 - `src/pages/`: `ShiftsPage`, `VolunteersPage`, `SettingsPage`, one per tab.
-- `src/components/`: shared components (`PageHeader`, `ShiftCard`, `StatusChip`, `SignUpDialog`, `SummaryTile`, `InfoTile`).
+- `src/components/`: shared components (`PageHeader`, `ShiftCard`, `StatusChip`, `SignUpDialog`, `SummaryTile`, `InfoTile`, `CarrotIcon`, `CarrotConfetti`). `CarrotIcon` is the `Button` end icon (set in the theme) and `CarrotConfetti` bursts confetti when a button with the carrot is clicked. Neither is in the Figma file.
 - `src/theme.ts`: the MUI theme and the color tokens.
 - `src/data/seed.ts`: the `Shift` and `Volunteer` types, sample data, and `CURRENT_VOLUNTEER_ID`.
 - `src/utils/time.ts`: `formatTime` and `formatTimeRange`.

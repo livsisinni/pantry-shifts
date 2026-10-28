@@ -411,7 +411,8 @@
         "variant=text is only used in the sign-up dialog (src/components/SignUpDialog.tsx:37).",
         "src/pages/VolunteersPage.tsx:23 renders a raw <button> for Print roster instead of Button. Figma uses Button there.",
         "Every Button renders a CarrotIcon (src/components/CarrotIcon.tsx) through the theme default endIcon. The Figma Button has no end icon, and CarrotIcon is not a Figma component, so it is not in this map.",
-        "The raw <button> in src/pages/VolunteersPage.tsx:23 also renders a CarrotIcon, added inside the element."
+        "The raw <button> in src/pages/VolunteersPage.tsx:23 also renders a CarrotIcon, added inside the element.",
+        "Clicking a Button (or the raw Print roster button) that shows a CarrotIcon pops the carrot and bursts confetti over the whole screen (src/components/CarrotConfetti.tsx, mounted in src/App.tsx and .storybook/preview.tsx). This behavior is not in Figma."
       ]
     },
     {

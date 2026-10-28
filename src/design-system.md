@@ -44,7 +44,7 @@ Defined in the `tokens` object in `src/theme.ts` and mapped into the MUI palette
 
 Do not repeat these on individual components.
 
-- `Button`: no elevation, border radius 10, horizontal padding 20, and a `CarrotIcon` as its `endIcon`, so every `Button` shows a carrot after its label. Do not set `endIcon` per button.
+- `Button`: no elevation, border radius 10, horizontal padding 20, and a `CarrotIcon` as its `endIcon`, so every `Button` shows a carrot after its label. Do not set `endIcon` per button. Clicking any button that shows the carrot triggers `CarrotConfetti`.
 - `Card`: `variant="outlined"`, border color is the `line` token.
 - `Chip`: label weight 600.
 - `AppBar`: no elevation, `color="inherit"`.
@@ -61,6 +61,7 @@ All are default exports with a `type Props` declared at the top of the file.
 | `SignUpDialog` | `shift: Shift \| null`, `onClose`, `onConfirm` | Confirmation dialog with a note field and a reminder checkbox. Renders nothing when `shift` is null. Parent passes a `key` so state resets per shift. |
 | `SummaryTile` | `label: string`, `value: string \| number` | Card with a small secondary-text label and a large `h2` value. |
 | `CarrotIcon` | none (it is an MUI SvgIcon: `fontSize`, `color`, `sx`) | Custom icon, because `@mui/icons-material` has no carrot. It is the `Button` end icon through the theme. Use it directly only where a raw element needs the same carrot. |
+| `CarrotConfetti` | none (renders nothing) | Mounted once in `App` and in the Storybook preview, inside the `ThemeProvider`. When a button that shows a `CarrotIcon` is clicked, its carrot pops and confetti (carrots and ribbons, in palette colors) bursts across the whole screen, above dialogs and snackbars, then the carrot grows back. It skips everything when the user prefers reduced motion. |
 | `InfoTile` | `title: string`, `text: string` | Card with a small secondary-text title and a large `h2` text. Same visual pattern as `SummaryTile` with different prop names. |
 
 Reuse these before building new ones. `SummaryTile` and `InfoTile` overlap, so check both before adding a third tile.

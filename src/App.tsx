@@ -1,6 +1,7 @@
 import { AppBar, Box, Container, Tab, Tabs, Toolbar, Typography } from '@mui/material';
 import VolunteerActivismRoundedIcon from '@mui/icons-material/VolunteerActivismRounded';
 import { useState } from 'react';
+import CarrotConfetti from './components/CarrotConfetti';
 import SettingsPage from './pages/SettingsPage';
 import ShiftsPage from './pages/ShiftsPage';
 import VolunteersPage from './pages/VolunteersPage';
@@ -19,6 +20,7 @@ export default function App() {
 
   return (
     <Box sx={{ minHeight: '100vh' }}>
+      <CarrotConfetti />
       <AppBar position="sticky" sx={{ borderBottom: 1, borderColor: 'divider', bgcolor: 'background.paper' }}>
         <Toolbar sx={{ gap: 3 }}>
           <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, color: 'primary.main' }}>
