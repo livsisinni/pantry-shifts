@@ -8,7 +8,7 @@ const meta = {
   args: { label: 'Active volunteers', value: 7 },
   decorators: [(Story) => <div style={{ width: 368 }}><Story /></div>],
   parameters: {
-    docs: { description: { component: 'Molecule. A Card with a small label and a large value. Figma: Molecules / SummaryTile.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-52' } },
+    docs: { description: { component: 'Molecule. A Card with a small label and a large value. Figma: Molecules / SummaryTile.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-52' } },
 } satisfies Meta<typeof SummaryTile>;
 export default meta;
 type Story = StoryObj<typeof meta>;

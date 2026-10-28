@@ -60,7 +60,7 @@ All are default exports with a `type Props` declared at the top of the file.
 | `StatusChip` | `spotsLeft: number` | "Full" chip when 0, otherwise an outlined primary chip reading "N spot(s) left". |
 | `SignUpDialog` | `shift: Shift \| null`, `onClose`, `onConfirm` | Confirmation dialog with a note field and a reminder checkbox. Renders nothing when `shift` is null. Parent passes a `key` so state resets per shift. |
 | `SummaryTile` | `label: string`, `value: string \| number` | Card with a small secondary-text label and a large `h2` value. |
-| `CarrotIcon` | none (it is an MUI SvgIcon: `fontSize`, `color`, `sx`) | Custom icon, because `@mui/icons-material` has no carrot. It is the `Button` end icon through the theme. Use it directly only where a raw element needs the same carrot. |
+| `CarrotIcon` | none (it is an MUI SvgIcon: `fontSize`, `color`, `sx`) | Custom icon, because `@mui/icons-material` has no carrot (Figma: Atoms / CarrotIcon). It is the `Button` end icon through the theme. Use it directly only where a raw element needs the same carrot. |
 | `CarrotConfetti` | none (renders nothing) | Mounted once in `App` and in the Storybook preview, inside the `ThemeProvider`. When a button that shows a `CarrotIcon` is clicked, its carrot pops and confetti (carrots and ribbons, in palette colors) bursts across the whole screen, above dialogs and snackbars, then the carrot grows back. It skips everything when the user prefers reduced motion. |
 | `InfoTile` | `title: string`, `text: string` | Card with a small secondary-text title and a large `h2` text. Same visual pattern as `SummaryTile` with different prop names. |
 

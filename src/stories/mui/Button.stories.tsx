@@ -12,7 +12,7 @@ const meta = {
   parameters: {
     docs: { description: { component: 'Atom. MUI Button as used in the code: variant, disabled and children. Figma: Atoms / Button.' } },
     controls: { include: ['children', 'variant', 'disabled'] },
-    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-119' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=3-119' },
   },
 } satisfies Meta<typeof Button>;
 export default meta;

@@ -14,7 +14,7 @@ const meta = {
   args: { shift: withVolunteers(3), signedUp: false, onSignUp: fn(), onCancel: fn() },
   decorators: [(Story) => <div style={{ width: 368 }}><Story /></div>],
   parameters: {
-    docs: { description: { component: 'Organism. Built from the Chip atom (role), the StatusChip molecule, the EventRounded and PlaceRounded icon atoms, a LinearProgress bar and the Button atom. Figma: Organisms / ShiftCard.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=5-179' } },
+    docs: { description: { component: 'Organism. Built from the Chip atom (role), the StatusChip molecule, the EventRounded and PlaceRounded icon atoms, a LinearProgress bar and the Button atom. Figma: Organisms / ShiftCard.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=5-179' } },
 } satisfies Meta<typeof ShiftCard>;
 export default meta;
 type Story = StoryObj<typeof meta>;

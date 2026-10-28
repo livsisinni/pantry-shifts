@@ -10,7 +10,7 @@ const meta = {
   parameters: {
     docs: { description: { component: 'Atom. MUI Chip, always size small. It is the building block of StatusChip and of the role chip on ShiftCard. Figma: Atoms / Chip.' } },
     controls: { include: ['label', 'variant', 'color'] },
-    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-6' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-6' },
   },
 } satisfies Meta<typeof Chip>;
 export default meta;

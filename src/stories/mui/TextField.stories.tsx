@@ -14,7 +14,7 @@ const meta = {
   parameters: {
     docs: { description: { component: 'Atom. MUI TextField (outlined) as used in the code. Its start adornment holds the SearchRounded icon atom. Figma: Atoms / TextField.' } },
     controls: { include: ['label', 'placeholder', 'value', 'size', 'multiline', 'type'] },
-    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-34' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-34' },
   },
 } satisfies Meta<typeof TextField>;
 export default meta;

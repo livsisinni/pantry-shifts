@@ -21,7 +21,7 @@ const meta = {
   parameters: {
     docs: { description: { component: 'Molecule. A group of three toggle buttons, used as the shift filter on ShiftsPage. Figma keeps it on the Screens page as a local helper, not on the Molecules page.' } },
     controls: { include: ['value'] },
-    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=6-23' },
+    design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=6-23' },
   },
 } satisfies Meta<typeof ToggleButtonGroup>;
 export default meta;

@@ -14,7 +14,7 @@ const meta = {
   argTypes: { action: { control: false } },
   decorators: [(Story) => <div style={{ maxWidth: 1152 }}><Story /></div>],
   parameters: {
-    docs: { description: { component: 'Molecule. A title, an optional subtitle and an optional action slot. The default action in Figma is a Button atom. Figma: Molecules / PageHeader.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-46' } },
+    docs: { description: { component: 'Molecule. A title, an optional subtitle and an optional action slot. The default action in Figma is a Button atom. Figma: Molecules / PageHeader.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-46' } },
 } satisfies Meta<typeof PageHeader>;
 export default meta;
 type Story = StoryObj<typeof meta>;

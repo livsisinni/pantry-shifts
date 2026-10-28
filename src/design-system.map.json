@@ -11,8 +11,8 @@
   "updated": "2026-10-28",
   "figma": {
     "fileKey": "IPcWrmWuclsYviyq4sJ5NS",
-    "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled",
-    "nodeUrlPattern": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=<id with ':' replaced by '-'>",
+    "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI",
+    "nodeUrlPattern": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=<id with ':' replaced by '-'>",
     "pages": {
       "Tokens": "0:1",
       "Atoms": "3:30",
@@ -20,7 +20,7 @@
       "Organisms": "3:32",
       "Screens": "3:33"
     },
-    "note": "The file is still named Untitled. Links use the file key, so they keep working after a rename."
+    "note": "The file is named Design-Lab-X-AI. Links use the file key, so they keep working after a rename."
   },
   "storybook": {
     "command": "npm run storybook",
@@ -281,7 +281,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-119"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=3-119"
       },
       "status": "mapped",
       "code": {
@@ -336,13 +336,31 @@
             "true"
           ],
           "code": "disabled"
+        },
+        {
+          "figma": "endIcon",
+          "figmaType": "BOOLEAN",
+          "code": "endIcon (theme default: CarrotIcon in src/theme.ts)",
+          "default": "true"
+        },
+        {
+          "figma": "endIconSwap",
+          "figmaType": "INSTANCE_SWAP",
+          "code": "the icon passed as endIcon",
+          "default": "CarrotIcon fontSize=small",
+          "preferred": [
+            "EventRounded",
+            "PlaceRounded",
+            "SearchRounded",
+            "VolunteerActivismRounded",
+            "CarrotIcon"
+          ]
         }
       ],
       "figmaOnly": [],
       "codeOnly": [
         "onClick",
-        "color (only ever the default primary)",
-        "endIcon (theme default: CarrotIcon, set in src/theme.ts, so every Button renders a carrot after its label)"
+        "color (only ever the default primary)"
       ],
       "variants": [
         {
@@ -395,14 +413,17 @@
         "direct": [
           "MuiButton/borderRadius",
           "MuiButton/paddingInline",
-          "primary/main",
           "primary/contrastText",
+          "primary/main",
+          "spacing/1",
           "typography/fontFamily"
         ],
         "textStyles": [
           "button"
         ],
-        "inherits": [],
+        "inherits": [
+          "CarrotIcon"
+        ],
         "literal": [
           "Disabled colors are MUI defaults: black at 12% (fill) and 26% (text). They are not theme tokens."
         ]
@@ -410,8 +431,9 @@
       "mismatches": [
         "disabled is only used on the contained button (src/components/ShiftCard.tsx:58); Figma exposes it on all three variants.",
         "variant=text is only used in the sign-up dialog (src/components/SignUpDialog.tsx:37).",
-        "Every Button renders a CarrotIcon (src/components/CarrotIcon.tsx) through the theme default endIcon. The Figma Button has no end icon, and CarrotIcon is not a Figma component, so it is not in this map.",
-        "Clicking a Button that shows a CarrotIcon pops the carrot and bursts confetti over the whole screen (src/components/CarrotConfetti.tsx, mounted in src/App.tsx and .storybook/preview.tsx). This behavior is not in Figma."
+        "Clicking a Button that shows a CarrotIcon pops the carrot and bursts confetti over the whole screen (src/components/CarrotConfetti.tsx, mounted in src/App.tsx and .storybook/preview.tsx). This behavior is not in Figma.",
+        "The Figma Button has endIcon (boolean, default on) and endIconSwap, matching the theme default endIcon: CarrotIcon in src/theme.ts. Figma has no per-button endIcon override because the code never sets one.",
+        "The icon color follows the text color in code (currentColor). In Figma the nested CarrotIcon fill and stroke are overridden per variant: primary/contrastText on contained, primary/main on outlined and text, black at 26% when disabled."
       ]
     },
     {
@@ -421,7 +443,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-6"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-6"
       },
       "status": "mapped",
       "code": {
@@ -521,7 +543,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-34"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-34"
       },
       "status": "mapped",
       "code": {
@@ -660,7 +682,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-85"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=3-85"
       },
       "status": "mapped",
       "code": {
@@ -732,7 +754,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-92"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=3-92"
       },
       "status": "mapped",
       "code": {
@@ -804,7 +826,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-99"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=3-99"
       },
       "status": "mapped",
       "code": {
@@ -876,7 +898,7 @@
         "type": "COMPONENT_SET",
         "page": "Atoms",
         "level": "atom",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=3-106"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=3-106"
       },
       "status": "mapped",
       "code": {
@@ -943,12 +965,91 @@
     },
     {
       "figma": {
+        "name": "CarrotIcon",
+        "id": "17:317",
+        "type": "COMPONENT_SET",
+        "page": "Atoms",
+        "level": "atom",
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=17-317"
+      },
+      "status": "mapped",
+      "code": {
+        "kind": "custom",
+        "file": "src/components/CarrotIcon.tsx",
+        "export": "default (CarrotIcon)",
+        "props": "MUI SvgIcon props (fontSize, color, sx)",
+        "themeDefaults": "src/theme.ts (components.MuiButton.defaultProps.endIcon)",
+        "usedIn": [
+          "src/theme.ts:39 (Button endIcon default)"
+        ]
+      },
+      "story": {
+        "title": "Atoms/Icons",
+        "file": "src/stories/mui/Icons.stories.tsx",
+        "docsId": "atoms-icons--docs",
+        "ids": [
+          "atoms-icons--carrot"
+        ]
+      },
+      "props": [
+        {
+          "figma": "fontSize",
+          "figmaType": "VARIANT",
+          "options": [
+            "small",
+            "medium"
+          ],
+          "code": "fontSize",
+          "note": "Figma default is small; the MUI default is medium."
+        }
+      ],
+      "figmaOnly": [],
+      "codeOnly": [
+        "color",
+        "sx"
+      ],
+      "variants": [
+        {
+          "figma": "fontSize=small",
+          "code": {
+            "fontSize": "small"
+          },
+          "size": "20px",
+          "story": "atoms-icons--carrot"
+        },
+        {
+          "figma": "fontSize=medium",
+          "code": {
+            "fontSize": "medium"
+          },
+          "size": "24px",
+          "story": "atoms-icons--carrot"
+        }
+      ],
+      "tokens": {
+        "direct": [
+          "text/primary"
+        ],
+        "textStyles": [],
+        "inherits": [],
+        "literal": []
+      },
+      "mismatches": [
+        "A custom icon (createSvgIcon), not from @mui/icons-material, because MUI has no carrot. The icon shapes are exported from src/components/CarrotIcon.tsx and also drawn by CarrotConfetti.",
+        "Figma defaults to fontSize=small, the MUI default is medium. The Button end icon is the small size (MUI sizes a Button end icon at 20px).",
+        "The code icon has a 0.8 stroke on each shape; Figma has one flattened vector with a stroke of the same weight, scaled to the icon size.",
+        "MUI icons use currentColor; Figma fills and strokes default to text/primary and each instance overrides the color.",
+        "The Figma component is not used directly in screens. It appears inside Button instances through the endIconSwap property."
+      ]
+    },
+    {
+      "figma": {
         "name": "StatusChip",
         "id": "4:45",
         "type": "COMPONENT_SET",
         "page": "Molecules",
         "level": "molecule",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-45"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-45"
       },
       "status": "mapped",
       "code": {
@@ -1033,7 +1134,7 @@
         "type": "COMPONENT",
         "page": "Molecules",
         "level": "molecule",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-46"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-46"
       },
       "status": "mapped",
       "code": {
@@ -1115,7 +1216,7 @@
         "type": "COMPONENT",
         "page": "Molecules",
         "level": "molecule",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-52"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-52"
       },
       "status": "mapped",
       "code": {
@@ -1184,7 +1285,7 @@
         "type": "COMPONENT_SET",
         "page": "Organisms",
         "level": "organism",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=5-179"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=5-179"
       },
       "status": "mapped",
       "code": {
@@ -1356,7 +1457,7 @@
         "type": "COMPONENT_SET",
         "page": "Screens",
         "level": "screen helper",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=6-23"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=6-23"
       },
       "status": "unmapped",
       "unmappedReason": "No standalone code component. The code uses MUI ToggleButtonGroup inline in ShiftsPage. Figma keeps it on the Screens page as a screen-local helper.",
@@ -1445,7 +1546,7 @@
         "type": "COMPONENT_SET",
         "page": "Screens",
         "level": "screen helper",
-        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=7-41"
+        "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=7-41"
       },
       "status": "unmapped",
       "unmappedReason": "No standalone code component. The app bar, brand and tabs are inline JSX in App.tsx. Figma keeps it on the Screens page as a screen-local helper. No story exists.",

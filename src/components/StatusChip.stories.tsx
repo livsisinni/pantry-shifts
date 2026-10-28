@@ -7,7 +7,7 @@ const meta = {
   tags: ['autodocs'],
   args: { spotsLeft: 3 },
   parameters: {
-    docs: { description: { component: 'Molecule. Built from the Chip atom. Figma: Molecules / StatusChip.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled?node-id=4-45' } },
+    docs: { description: { component: 'Molecule. Built from the Chip atom. Figma: Molecules / StatusChip.' } }, design: { type: 'figma', url: 'https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Design-Lab-X-AI?node-id=4-45' } },
 } satisfies Meta<typeof StatusChip>;
 export default meta;
 type Story = StoryObj<typeof meta>;
