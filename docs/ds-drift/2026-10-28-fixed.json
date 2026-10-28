@@ -1,0 +1,338 @@
+{
+  "schema": "ds-drift/1",
+  "generatedAt": "2026-10-28T22:20:21.490Z",
+  "date": "2026-10-28",
+  "project": {
+    "name": "pantry-shifts",
+    "root": "."
+  },
+  "system": {
+    "componentsPkg": "@mui/material",
+    "catalog": "typescript",
+    "tokenSources": [
+      "src/theme.ts"
+    ],
+    "resolved": {
+      "@mui/material": "node_modules/@mui/material/esm/index.d.ts",
+      "@mui/material/styles": "node_modules/@mui/material/esm/styles/index.d.ts",
+      "@mui/material/utils": "node_modules/@mui/material/esm/utils/index.d.ts"
+    }
+  },
+  "scope": {
+    "mode": "full",
+    "filesScanned": 19,
+    "styleFilesScanned": 0
+  },
+  "summary": {
+    "score": 98,
+    "gate": "review",
+    "dimensions": {
+      "imports": {
+        "score": 100,
+        "gate": "pass",
+        "findings": 0,
+        "filesChecked": 17
+      },
+      "apiFidelity": {
+        "score": 100,
+        "gate": "pass",
+        "findings": 0,
+        "filesChecked": 15
+      },
+      "tokenDiscipline": {
+        "score": 93,
+        "gate": "review",
+        "findings": 6,
+        "filesChecked": 9
+      },
+      "a11yStatic": {
+        "score": 100,
+        "gate": "pass",
+        "findings": 0,
+        "filesChecked": 13
+      }
+    },
+    "adoption": {
+      "uiFiles": 13,
+      "usingSystem": 13,
+      "percent": 100,
+      "notUsing": []
+    },
+    "counts": {
+      "total": 6,
+      "fail": 0,
+      "review": 6,
+      "info": 0
+    }
+  },
+  "coverage": {
+    "include": null,
+    "componentsSrc": [],
+    "folders": [
+      {
+        "folder": "src/components",
+        "uiFiles": 7,
+        "usingSystem": 7
+      },
+      {
+        "folder": "src/pages",
+        "uiFiles": 3,
+        "usingSystem": 3
+      },
+      {
+        "folder": "src",
+        "uiFiles": 2,
+        "usingSystem": 2
+      },
+      {
+        "folder": ".storybook",
+        "uiFiles": 1,
+        "usingSystem": 1
+      }
+    ],
+    "notCounted": []
+  },
+  "notes": [],
+  "topFiles": [
+    {
+      "file": "src/pages/VolunteersPage.tsx",
+      "findings": 4
+    },
+    {
+      "file": "src/components/ShiftCard.tsx",
+      "findings": 1
+    },
+    {
+      "file": "src/pages/SettingsPage.tsx",
+      "findings": 1
+    }
+  ],
+  "findings": [
+    {
+      "id": "raw-dimension:src/components/ShiftCard.tsx:height=8",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "src/components/ShiftCard.tsx",
+      "line": 46,
+      "symbol": "height=8",
+      "message": "Inline style height: '8' in src/components/ShiftCard.tsx:46 bypasses design tokens",
+      "fix": "'height: 8' is a unitless number, which means 8px. Use a design system spacing/sizing token instead."
+    },
+    {
+      "id": "raw-dimension:src/pages/SettingsPage.tsx:maxWidth=560",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "src/pages/SettingsPage.tsx",
+      "line": 18,
+      "symbol": "maxWidth=560",
+      "message": "Inline style maxWidth: '560' in src/pages/SettingsPage.tsx:18 bypasses design tokens",
+      "fix": "'maxWidth: 560' is a unitless number, which means 560px. Use a design system spacing/sizing token instead."
+    },
+    {
+      "id": "raw-dimension:src/pages/VolunteersPage.tsx:maxWidth=360",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "src/pages/VolunteersPage.tsx",
+      "line": 49,
+      "symbol": "maxWidth=360",
+      "message": "Inline style maxWidth: '360' in src/pages/VolunteersPage.tsx:49 bypasses design tokens",
+      "fix": "'maxWidth: 360' is a unitless number, which means 360px. Use a design system spacing/sizing token instead."
+    },
+    {
+      "id": "raw-dimension:src/pages/VolunteersPage.tsx:width=32",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "src/pages/VolunteersPage.tsx",
+      "line": 66,
+      "symbol": "width=32",
+      "message": "Inline style width: '32' in src/pages/VolunteersPage.tsx:66 bypasses design tokens",
+      "fix": "'width: 32' is a unitless number, which means 32px. Use a design system spacing/sizing token instead."
+    },
+    {
+      "id": "raw-dimension:src/pages/VolunteersPage.tsx:height=32",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "src/pages/VolunteersPage.tsx",
+      "line": 66,
+      "symbol": "height=32",
+      "message": "Inline style height: '32' in src/pages/VolunteersPage.tsx:66 bypasses design tokens",
+      "fix": "'height: 32' is a unitless number, which means 32px. Use a design system spacing/sizing token instead."
+    },
+    {
+      "id": "raw-dimension:src/pages/VolunteersPage.tsx:fontSize=14",
+      "dimension": "tokenDiscipline",
+      "rule": "raw-dimension",
+      "severity": "review",
+      "file": "src/pages/VolunteersPage.tsx",
+      "line": 66,
+      "symbol": "fontSize=14",
+      "message": "Inline style fontSize: '14' in src/pages/VolunteersPage.tsx:66 bypasses design tokens",
+      "fix": "'fontSize: 14' is a unitless number, which means 14px. Use a design system spacing/sizing token instead."
+    }
+  ],
+  "delta": {
+    "baselineFile": "2026-10-28-confetti.json",
+    "baselineDate": "2026-10-28",
+    "baselineLabel": "2026-10-28-confetti",
+    "scoreDelta": 3,
+    "dimensions": {
+      "imports": 0,
+      "apiFidelity": 0,
+      "tokenDiscipline": 13,
+      "a11yStatic": 1
+    },
+    "new": [],
+    "fixed": [
+      {
+        "id": "raw-dimension:src/components/InfoTile.tsx:padding=20",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/components/InfoTile.tsx",
+        "line": 7,
+        "symbol": "padding=20",
+        "message": "Inline style padding: '20' in src/components/InfoTile.tsx:7 bypasses design tokens",
+        "fix": "'padding: 20' is a unitless number, which means 20px. Use a design system spacing/sizing token instead."
+      },
+      {
+        "id": "raw-dimension:src/components/InfoTile.tsx:marginBottom=12",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/components/InfoTile.tsx",
+        "line": 7,
+        "symbol": "marginBottom=12",
+        "message": "Inline style marginBottom: '12' in src/components/InfoTile.tsx:7 bypasses design tokens",
+        "fix": "'marginBottom: 12' is a unitless number, which means 12px. Use a design system spacing/sizing token instead."
+      },
+      {
+        "id": "raw-color:src/components/ShiftCard.tsx:borderLeft=4px solid #2F6B4F",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-color",
+        "severity": "review",
+        "file": "src/components/ShiftCard.tsx",
+        "line": 24,
+        "symbol": "borderLeft=4px solid #2F6B4F",
+        "message": "Inline style borderLeft: '4px solid #2F6B4F' in src/components/ShiftCard.tsx:24 bypasses design tokens",
+        "fix": "This value is already a token: use `green` (src/theme.ts)."
+      },
+      {
+        "id": "raw-dimension:src/components/ShiftCard.tsx:padding=20px",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/components/ShiftCard.tsx",
+        "line": 25,
+        "symbol": "padding=20px",
+        "message": "Inline style padding: '20px' in src/components/ShiftCard.tsx:25 bypasses design tokens",
+        "fix": "Use a design system spacing/sizing token instead of a raw value for 'padding'."
+      },
+      {
+        "id": "raw-color:src/components/StatusChip.tsx:bgcolor=#FCEFD9",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-color",
+        "severity": "review",
+        "file": "src/components/StatusChip.tsx",
+        "line": 7,
+        "symbol": "bgcolor=#FCEFD9",
+        "message": "Inline style bgcolor: '#FCEFD9' in src/components/StatusChip.tsx:7 bypasses design tokens",
+        "fix": "This value is already a token: use `amberLight` (src/theme.ts)."
+      },
+      {
+        "id": "raw-color:src/components/StatusChip.tsx:color=#C9791B",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-color",
+        "severity": "review",
+        "file": "src/components/StatusChip.tsx",
+        "line": 7,
+        "symbol": "color=#C9791B",
+        "message": "Inline style color: '#C9791B' in src/components/StatusChip.tsx:7 bypasses design tokens",
+        "fix": "This value is already a token: use `amber` (src/theme.ts)."
+      },
+      {
+        "id": "raw-dimension:src/pages/SettingsPage.tsx:fontSize=13",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/pages/SettingsPage.tsx",
+        "line": 33,
+        "symbol": "fontSize=13",
+        "message": "Inline style fontSize: '13' in src/pages/SettingsPage.tsx:33 bypasses design tokens",
+        "fix": "'fontSize: 13' is a unitless number, which means 13px. Use a design system spacing/sizing token instead."
+      },
+      {
+        "id": "raw-color:src/pages/SettingsPage.tsx:color=#6b6b6b",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-color",
+        "severity": "review",
+        "file": "src/pages/SettingsPage.tsx",
+        "line": 33,
+        "symbol": "color=#6b6b6b",
+        "message": "Inline style color: '#6b6b6b' in src/pages/SettingsPage.tsx:33 bypasses design tokens",
+        "fix": "Use a design system color token instead of a raw value for 'color'."
+      },
+      {
+        "id": "raw-dimension:src/pages/SettingsPage.tsx:marginTop=4px",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/pages/SettingsPage.tsx",
+        "line": 33,
+        "symbol": "marginTop=4px",
+        "message": "Inline style marginTop: '4px' in src/pages/SettingsPage.tsx:33 bypasses design tokens",
+        "fix": "Use a design system spacing/sizing token instead of a raw value for 'marginTop'."
+      },
+      {
+        "id": "raw-dimension:src/pages/VolunteersPage.tsx:padding=10px 18px",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/pages/VolunteersPage.tsx",
+        "line": 24,
+        "symbol": "padding=10px 18px",
+        "message": "Inline style padding: '10px 18px' in src/pages/VolunteersPage.tsx:24 bypasses design tokens",
+        "fix": "Use a design system spacing/sizing token instead of a raw value for 'padding'."
+      },
+      {
+        "id": "raw-color:src/pages/VolunteersPage.tsx:background=#2F6B4F",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-color",
+        "severity": "review",
+        "file": "src/pages/VolunteersPage.tsx",
+        "line": 24,
+        "symbol": "background=#2F6B4F",
+        "message": "Inline style background: '#2F6B4F' in src/pages/VolunteersPage.tsx:24 bypasses design tokens",
+        "fix": "This value is already a token: use `green` (src/theme.ts)."
+      },
+      {
+        "id": "raw-dimension:src/pages/VolunteersPage.tsx:borderRadius=8",
+        "dimension": "tokenDiscipline",
+        "rule": "raw-dimension",
+        "severity": "review",
+        "file": "src/pages/VolunteersPage.tsx",
+        "line": 24,
+        "symbol": "borderRadius=8",
+        "message": "Inline style borderRadius: '8' in src/pages/VolunteersPage.tsx:24 bypasses design tokens",
+        "fix": "'borderRadius: 8' is a unitless number, which means 8px. Use a design system spacing/sizing token instead."
+      },
+      {
+        "id": "control-has-name:src/pages/VolunteersPage.tsx:TextField",
+        "dimension": "a11yStatic",
+        "rule": "control-has-name",
+        "severity": "review",
+        "file": "src/pages/VolunteersPage.tsx",
+        "line": 45,
+        "symbol": "TextField",
+        "message": "<TextField> form control has no accessible name in src/pages/VolunteersPage.tsx:45",
+        "fix": "Associate a <label htmlFor> / aria-label, or put the control inside FormField."
+      }
+    ],
+    "unchanged": 6
+  },
+  "interpretation": "This run follows the fixes. The score rose from 95 to 98 and the gate is still review: 13 findings were fixed, 6 remain, and none are new.\n\n- Fixed: the raw Print roster button is now a MUI Button, the hex values in ShiftCard and StatusChip are palette keys, the Settings caption uses the caption variant, InfoTile and ShiftCard spacing uses sx units, and the roster search field has an aria-label. Accessibility is back to 100 and token discipline went from 80 to 93.\n- What is left are 6 hardcoded sizes that are one-off layout values with no token: the progress bar height in ShiftCard, the 560 and 360 max widths in SettingsPage and VolunteersPage, and the 32px avatar with 14px text. src/design-system.md already lists them as literal sizes. They are likely noise for this repo, and ds-drift has no inline ignore yet, so the gate stays review until they are turned into theme values or the scanner gains one.\n- Adoption is still 100% (13 of 13 UI files).\n- This report cannot see what Storybook's accessibility checks found: the Full chip contrast (2.96:1), the unselected filter buttons (4.48:1) and the progress bar without an accessible name in ShiftCard.\n\nFix next, if you want: the progress bar name (one aria-label), then the Full chip contrast, which changes how it looks."
+}

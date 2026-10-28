@@ -1,7 +1,6 @@
-import { Avatar, Card, Grid, InputAdornment, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
+import { Avatar, Button, Card, Grid, InputAdornment, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { useMemo, useState } from 'react';
-import CarrotIcon from '../components/CarrotIcon';
 import PageHeader from '../components/PageHeader';
 import SummaryTile from '../components/SummaryTile';
 import { volunteers } from '../data/seed';
@@ -20,13 +19,9 @@ export default function VolunteersPage() {
         title="Volunteers"
         subtitle="Everyone who has helped this season."
         action={
-          <button
-            style={{ padding: '10px 18px', background: '#2F6B4F', color: 'white', border: 'none', borderRadius: 8, fontWeight: 600, cursor: 'pointer' }}
-            onClick={() => window.print()}
-          >
+          <Button variant="contained" onClick={() => window.print()}>
             Print roster
-            <CarrotIcon fontSize="small" sx={{ ml: 1, verticalAlign: 'middle' }} />
-          </button>
+          </Button>
         }
       />
       <Grid container spacing={3} sx={{ mb: 3 }}>
@@ -47,7 +42,10 @@ export default function VolunteersPage() {
             placeholder="Search by name or email"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            slotProps={{ input: { startAdornment: (<InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>) } }}
+            slotProps={{
+              input: { startAdornment: (<InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>) },
+              htmlInput: { 'aria-label': 'Search volunteers' },
+            }}
             sx={{ maxWidth: 360 }}
           />
         </Stack>

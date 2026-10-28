@@ -295,7 +295,8 @@
           "src/components/ShiftCard.tsx:58",
           "src/components/SignUpDialog.tsx:37",
           "src/components/SignUpDialog.tsx:38",
-          "src/pages/SettingsPage.tsx:37"
+          "src/pages/SettingsPage.tsx:37",
+          "src/pages/VolunteersPage.tsx:22"
         ]
       },
       "story": {
@@ -409,10 +410,8 @@
       "mismatches": [
         "disabled is only used on the contained button (src/components/ShiftCard.tsx:58); Figma exposes it on all three variants.",
         "variant=text is only used in the sign-up dialog (src/components/SignUpDialog.tsx:37).",
-        "src/pages/VolunteersPage.tsx:23 renders a raw <button> for Print roster instead of Button. Figma uses Button there.",
         "Every Button renders a CarrotIcon (src/components/CarrotIcon.tsx) through the theme default endIcon. The Figma Button has no end icon, and CarrotIcon is not a Figma component, so it is not in this map.",
-        "The raw <button> in src/pages/VolunteersPage.tsx:23 also renders a CarrotIcon, added inside the element.",
-        "Clicking a Button (or the raw Print roster button) that shows a CarrotIcon pops the carrot and bursts confetti over the whole screen (src/components/CarrotConfetti.tsx, mounted in src/App.tsx and .storybook/preview.tsx). This behavior is not in Figma."
+        "Clicking a Button that shows a CarrotIcon pops the carrot and bursts confetti over the whole screen (src/components/CarrotConfetti.tsx, mounted in src/App.tsx and .storybook/preview.tsx). This behavior is not in Figma."
       ]
     },
     {
@@ -511,7 +510,7 @@
       "mismatches": [
         "Figma has the 2 variant combinations used in the code, not all 4.",
         "The role chip (src/components/ShiftCard.tsx:27) is a filled chip with an sx override (primary.light fill, primary.dark text), not a prop. Story: atoms-chip--role.",
-        "The Full chip (src/components/StatusChip.tsx:7) is a filled chip with sx overrides using raw hex #FCEFD9 and #C9791B, which equal secondary.light and secondary.main.",
+        "The Full chip (src/components/StatusChip.tsx:7) is a filled chip with sx overrides (secondary.light fill, secondary.main text), not props.",
         "size is always small in the code and is not a Figma property."
       ]
     },
@@ -532,7 +531,7 @@
         "file": "node_modules/@mui/material/TextField",
         "usedIn": [
           "src/components/SignUpDialog.tsx:21",
-          "src/pages/VolunteersPage.tsx:43",
+          "src/pages/VolunteersPage.tsx:40",
           "src/pages/SettingsPage.tsx:22",
           "src/pages/SettingsPage.tsx:23"
         ]
@@ -603,7 +602,8 @@
         "type (email)",
         "fullWidth",
         "onChange",
-        "sx maxWidth"
+        "sx maxWidth",
+        "slotProps.htmlInput (aria-label on the roster search field)"
       ],
       "variants": [
         {
@@ -649,8 +649,8 @@
       "mismatches": [
         "The Figma default is size=small; the MUI default is medium.",
         "The Figma label is always the shrunk (floating) label state.",
-        "src/pages/VolunteersPage.tsx:43 has a placeholder but no label or aria-label, so it has no accessible name. Figma shows it without a label.",
-        "Story atoms-textfield--email has no Figma variant (type=email is a code-only prop)."
+        "Story atoms-textfield--email has no Figma variant (type=email is a code-only prop).",
+        "The roster search field (src/pages/VolunteersPage.tsx:40) has no visible label; its accessible name is aria-label \"Search volunteers\" (slotProps.htmlInput). Figma shows it without a label. Story atoms-textfield--small-with-search-adornment sets the same aria-label."
       ]
     },
     {
@@ -813,7 +813,7 @@
         "export": "SearchRoundedIcon (default export)",
         "file": "node_modules/@mui/icons-material/SearchRounded.js",
         "usedIn": [
-          "src/pages/VolunteersPage.tsx:48 (fontSize small, inside TextField)"
+          "src/pages/VolunteersPage.tsx:46 (fontSize small, inside TextField)"
         ]
       },
       "story": {
@@ -885,7 +885,7 @@
         "export": "VolunteerActivismRoundedIcon (default export)",
         "file": "node_modules/@mui/icons-material/VolunteerActivismRounded.js",
         "usedIn": [
-          "src/App.tsx:25 (fontSize default medium, colored by the parent: primary.main)"
+          "src/App.tsx:27 (fontSize default medium, colored by the parent: primary.main)"
         ]
       },
       "story": {
@@ -1023,8 +1023,7 @@
       },
       "mismatches": [
         "spotsLeft is a number in code and a 3-value variant in Figma.",
-        "The label is derived in code (\"Full\", \"1 spot left\", \"N spots left\"); in Figma it is a text override on the nested Chip.",
-        "src/components/StatusChip.tsx:7 uses raw hex values for the Full chip; Figma binds secondary/light and secondary/main."
+        "The label is derived in code (\"Full\", \"1 spot left\", \"N spots left\"); in Figma it is a text override on the nested Chip."
       ]
     },
     {
@@ -1125,9 +1124,9 @@
         "export": "default (SummaryTile)",
         "props": "{ label: string; value: string | number }",
         "usedIn": [
+          "src/pages/VolunteersPage.tsx:29",
           "src/pages/VolunteersPage.tsx:32",
-          "src/pages/VolunteersPage.tsx:35",
-          "src/pages/VolunteersPage.tsx:38"
+          "src/pages/VolunteersPage.tsx:35"
         ]
       },
       "story": {
@@ -1346,7 +1345,6 @@
       "mismatches": [
         "The code takes one shift object; Figma splits it into text properties and two variants. spotsLeft is derived, not a prop.",
         "The progress fill width and the \"N of M volunteers\" text are manual overrides in Figma.",
-        "src/components/ShiftCard.tsx:24 and :25 hardcode borderLeft '4px solid #2F6B4F' and padding '20px'. Figma binds primary/main and spacing/2_5.",
         "src/components/ShiftCard.tsx:46 sets the progress borderRadius to 4 in sx, which MUI multiplies by shape.borderRadius (12) to render 48px. Figma uses a 4px radius, which looks identical at 8px tall.",
         "ShiftCard formats the date with the browser locale. Figma shows en-US (\"Mon, Nov 2\")."
       ]
@@ -1458,7 +1456,7 @@
         "file": null,
         "themeDefaults": "src/theme.ts (components.MuiAppBar: no elevation, color inherit)",
         "usedIn": [
-          "src/App.tsx:22"
+          "src/App.tsx:24"
         ]
       },
       "story": null,

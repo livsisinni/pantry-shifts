@@ -99,4 +99,4 @@ Reuse these before building new ones. `SummaryTile` and `InfoTile` overlap, so c
 
 ## Literal sizes found in components
 
-These are hardcoded in the code and are not tokens: avatar 32px with 14px text (`VolunteersPage`), progress bar height 8px with radius 4 (`ShiftCard`), caption text 13px (`SettingsPage`), form column max width 560 (`SettingsPage`), search field max width 360 (`VolunteersPage`).
+These are hardcoded in the code and are not tokens: avatar 32px with 14px text (`VolunteersPage`), progress bar height 8px with radius 4 (`ShiftCard`; MUI multiplies a numeric `borderRadius` in `sx` by `shape.borderRadius`, so it renders 48px), form column max width 560 (`SettingsPage`), search field max width 360 (`VolunteersPage`).

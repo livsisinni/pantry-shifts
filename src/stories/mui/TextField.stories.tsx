@@ -30,7 +30,10 @@ export const SmallWithSearchAdornment: Story = {
     value: '',
     placeholder: 'Search by name or email',
     fullWidth: false,
-    slotProps: { input: { startAdornment: (<InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>) } },
+    slotProps: {
+      input: { startAdornment: (<InputAdornment position="start"><SearchRoundedIcon fontSize="small" /></InputAdornment>) },
+      htmlInput: { 'aria-label': 'Search volunteers' },
+    },
     sx: { maxWidth: 360 },
   },
 };
