@@ -1,6 +1,7 @@
 import { Avatar, Card, Grid, InputAdornment, Stack, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import { useMemo, useState } from 'react';
+import CarrotIcon from '../components/CarrotIcon';
 import PageHeader from '../components/PageHeader';
 import SummaryTile from '../components/SummaryTile';
 import { volunteers } from '../data/seed';
@@ -24,6 +25,7 @@ export default function VolunteersPage() {
             onClick={() => window.print()}
           >
             Print roster
+            <CarrotIcon fontSize="small" sx={{ ml: 1, verticalAlign: 'middle' }} />
           </button>
         }
       />

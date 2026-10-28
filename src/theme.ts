@@ -1,4 +1,6 @@
 import { createTheme } from '@mui/material/styles';
+import { createElement } from 'react';
+import CarrotIcon from './components/CarrotIcon';
 
 // Design tokens for Pantry Shifts. Components should read from the theme
 // (palette, spacing, shape) instead of hardcoding values.
@@ -34,7 +36,7 @@ export const theme = createTheme({
   },
   components: {
     MuiButton: {
-      defaultProps: { disableElevation: true },
+      defaultProps: { disableElevation: true, endIcon: createElement(CarrotIcon) },
       styleOverrides: { root: { borderRadius: 10, paddingInline: 20 } },
     },
     MuiCard: {

@@ -8,7 +8,7 @@
     "When you change a component's props, variants or tokens, update its entry here and its Figma component and Storybook story. Do not guess a mapping that is not in this file."
   ],
   "version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-28",
   "figma": {
     "fileKey": "IPcWrmWuclsYviyq4sJ5NS",
     "url": "https://www.figma.com/design/IPcWrmWuclsYviyq4sJ5NS/Untitled",
@@ -289,7 +289,7 @@
         "import": "import { Button } from '@mui/material'",
         "export": "Button",
         "file": "node_modules/@mui/material/Button",
-        "themeDefaults": "src/theme.ts (components.MuiButton)",
+        "themeDefaults": "src/theme.ts (components.MuiButton: disableElevation, endIcon CarrotIcon)",
         "usedIn": [
           "src/components/ShiftCard.tsx:54",
           "src/components/ShiftCard.tsx:58",
@@ -340,7 +340,8 @@
       "figmaOnly": [],
       "codeOnly": [
         "onClick",
-        "color (only ever the default primary)"
+        "color (only ever the default primary)",
+        "endIcon (theme default: CarrotIcon, set in src/theme.ts, so every Button renders a carrot after its label)"
       ],
       "variants": [
         {
@@ -408,7 +409,9 @@
       "mismatches": [
         "disabled is only used on the contained button (src/components/ShiftCard.tsx:58); Figma exposes it on all three variants.",
         "variant=text is only used in the sign-up dialog (src/components/SignUpDialog.tsx:37).",
-        "src/pages/VolunteersPage.tsx:23 renders a raw <button> for Print roster instead of Button. Figma uses Button there."
+        "src/pages/VolunteersPage.tsx:23 renders a raw <button> for Print roster instead of Button. Figma uses Button there.",
+        "Every Button renders a CarrotIcon (src/components/CarrotIcon.tsx) through the theme default endIcon. The Figma Button has no end icon, and CarrotIcon is not a Figma component, so it is not in this map.",
+        "The raw <button> in src/pages/VolunteersPage.tsx:23 also renders a CarrotIcon, added inside the element."
       ]
     },
     {

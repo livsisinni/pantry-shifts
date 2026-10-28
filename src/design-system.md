@@ -44,7 +44,7 @@ Defined in the `tokens` object in `src/theme.ts` and mapped into the MUI palette
 
 Do not repeat these on individual components.
 
-- `Button`: no elevation, border radius 10, horizontal padding 20.
+- `Button`: no elevation, border radius 10, horizontal padding 20, and a `CarrotIcon` as its `endIcon`, so every `Button` shows a carrot after its label. Do not set `endIcon` per button.
 - `Card`: `variant="outlined"`, border color is the `line` token.
 - `Chip`: label weight 600.
 - `AppBar`: no elevation, `color="inherit"`.
@@ -60,6 +60,7 @@ All are default exports with a `type Props` declared at the top of the file.
 | `StatusChip` | `spotsLeft: number` | "Full" chip when 0, otherwise an outlined primary chip reading "N spot(s) left". |
 | `SignUpDialog` | `shift: Shift \| null`, `onClose`, `onConfirm` | Confirmation dialog with a note field and a reminder checkbox. Renders nothing when `shift` is null. Parent passes a `key` so state resets per shift. |
 | `SummaryTile` | `label: string`, `value: string \| number` | Card with a small secondary-text label and a large `h2` value. |
+| `CarrotIcon` | none (it is an MUI SvgIcon: `fontSize`, `color`, `sx`) | Custom icon, because `@mui/icons-material` has no carrot. It is the `Button` end icon through the theme. Use it directly only where a raw element needs the same carrot. |
 | `InfoTile` | `title: string`, `text: string` | Card with a small secondary-text title and a large `h2` text. Same visual pattern as `SummaryTile` with different prop names. |
 
 Reuse these before building new ones. `SummaryTile` and `InfoTile` overlap, so check both before adding a third tile.
@@ -72,7 +73,7 @@ Reuse these before building new ones. `SummaryTile` and `InfoTile` overlap, so c
 - Inputs: `Button`, `TextField`, `Checkbox`, `Switch`, `FormControlLabel`, `ToggleButtonGroup`, `ToggleButton`, `InputAdornment`.
 - Data display: `Typography`, `Chip`, `Avatar`, `LinearProgress`, `Table`, `TableContainer`, `TableHead`, `TableBody`, `TableRow`, `TableCell`.
 - Feedback: `Snackbar`, `Alert`.
-- Icons: `@mui/icons-material` with the `Rounded` variant (`EventRounded`, `PlaceRounded`, `SearchRounded`, `VolunteerActivismRounded`).
+- Icons: `@mui/icons-material` with the `Rounded` variant (`EventRounded`, `PlaceRounded`, `SearchRounded`, `VolunteerActivismRounded`), plus the custom `CarrotIcon` from `src/components/CarrotIcon.tsx`.
 
 ## Usage patterns
 
